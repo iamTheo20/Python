@@ -1,0 +1,72 @@
+import time
+
+t0 = time.time()
+
+
+# -- Project 1 -- #
+from sympy import divisors
+
+tal1, tal2, tal3 = 238944384, 557536896, 1881687024
+
+div1, div2, div3 = set(divisors(tal1)), set(divisors(tal2)), set(divisors(tal3))
+
+delareTot = div3.intersection(div2, div1)
+setLen = len(delareTot)
+
+print(sorted(delareTot))
+print(setLen)
+
+t1 = time.time()
+
+total = t1-t0
+print(total)
+
+
+
+# -- Project 2 -- #
+import math 
+
+def C(n,k):
+  a= math.factorial(n)
+  b=math.factorial(k)
+  c=math.factorial(n-k)
+  x=a/(b*c)
+  return(x)
+
+
+
+y=C(7,1)+C(7,2)+C(7,3)+C(7,4)+C(7,5)+C(7,6)+C(7,7)
+
+
+print(y)
+
+
+
+# -- Project 3 -- #
+
+K3=0
+I3=0
+while I3<100:
+  K2=0
+  I2=0
+  while I2 < 1000:
+    K=0
+    I1=0
+    while I1 != 1:  
+      Y=random.randrange(1,21,1)
+      if Y == 1:
+        I1=I1+1
+      K = K+1
+    I2=I2+1
+    K2=K2+K
+  #print(K)
+  I3 = I3+1
+  print("I3 =" , I3 ,"K2 =",K2/1000)
+  K3 = K3 + K2
+
+print("K3 =", K3/100000)
+
+
+
+
+
